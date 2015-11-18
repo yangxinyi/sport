@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html ng-app="wxapp">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="author" content="theanswerli" />
+    <meta name="description" content="Responsive Websites Using BootStrap And AngularJs - com.winxuan">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>核心业务管理平台·文轩在线</title>
+
+    <link rel="stylesheet" href="/resources/css/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/css/libs/bootstrap-table.css">
+    <!--<link rel="stylesheet" href="${pageContext.request.contextPath}/css/libs/bootstrap/css/bootstrap-theme.min.css">-->
+    <!--<link rel="stylesheet" href="${pageContext.request.contextPath}/css/libs/themes/sandstone/bootstrap.css" media="screen">-->
+    <link rel="stylesheet" href="/resources/css/libs/themes/assets/css/bootswatch.min.css">
+    <link rel="stylesheet" href="/resources/css/animation.css">
+    <!--<link rel="stylesheet" href="/resources/css/libs/font-awesome/font-awesome.css">-->
+    <link rel="stylesheet" href="resources/font-awesome-4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/resources/css/validator.css">
+    <link rel="stylesheet" href="/resources/js/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="/resources/js/codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="resources/angular-textAngular/textAngular.css">
+    <link rel='stylesheet' href='resources/angular-loading-bar/loading-bar.css'>
+    <link rel="stylesheet" href="resources/angularjs-toaster/toaster.css">
+    <link rel="stylesheet" href="resources/angular-ngFlow/ng-flow.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="/resources/css/libs/font-awesome/font-awesome-ie7.css">
+    <![endif]-->
+    <link rel="stylesheet" href="/resources/css/platform.css">
+    <link id="platformTheme" rel="stylesheet" href="" media="screen">
+    <link rel="stylesheet" href="resources/jquery-ztree/css/zTreeStyle/zTreeStyle.css">
+
+</head>
+<body>
+    <wx-head></wx-head>
+    <wx-head></wx-head>
+    <!--<div class="container-fluid app" ng-controller="wxappCtrl">-->
+    <!--<ui-breadcrumbs displayname-property="data.displayName"></ui-breadcrumbs>-->
+    <!--<breadcrumb-tpl ng-show="needMenus"></breadcrumb-tpl>-->
+    <!--<div ui-view></div>-->
+    <!--&lt;!&ndash; toaster消息框 &ndash;&gt;-->
+    <!--<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>-->
+    <!--&lt;!&ndash; / toaster directive &ndash;&gt;-->
+    <!--</div>-->
+
+    <div class="container-fluid app" ng-controller="wxappCtrl">
+        <div class="row">
+            <div class="col-md-2 col-lg-2 col-xs-2" ng-show="needMenus">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-xs-12">
+                        <menu-tpl></menu-tpl>
+                    </div>
+                </div>
+            </div>
+            <div class="{{needMenus?'col-md-10 col-lg-10 col-xs-10':'col-md-12 col-lg-12 col-xs-12'}} app-container">
+                <breadcrumb-tpl ></breadcrumb-tpl>
+                <div class="row">
+                    <div ui-view></div>
+                </div>
+                <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+            </div>
+        </div>
+    </div>
+    </div>
+    <dialog-tpl></dialog-tpl>
+    <!--加载jquery、bootstrap等UI-->
+    <script src="resources/bootstrap/js/jquery-1.11.3.min.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.js"></script>
+    <script src="resources/jquery-ztree/js/jquery.ztree.all-3.5.js"></script>
+
+    <!--加载angularJS-->
+    <script src="resources/angular/angular.js"></script>
+    <script src="resources/angular/angular-animate.js"></script>
+    <script src="resources/angular/angular-resource.js"></script>
+    <script src="resources/angular/angular-sanitize.js"></script>
+    <script src="resources/angular/angular-cookies.min.js"></script>
+    <script src="resources/angular-ui-router/angular-ui-router.js"></script>
+    <script src="resources/angular/angular-route.js"></script>
+    <script src="resources/angular-textAngular/textAngular-rangy.min.js"></script>
+    <script src="resources/angular-textAngular/textAngular-sanitize.min.js"></script>
+    <script src="resources/angular-textAngular/textAngular.min.js"></script>
+    <script src="resources/angular-ui-bootstrap/ui-bootstrap-tpls-0.13.3.min.js"></script>
+    <script src='resources/angular-loading-bar/loading-bar.js'></script>
+    <script src="resources/angularjs-toaster/toaster.js"></script>
+
+    <!--文件上传-->
+    <script src="resources/angular-ngFlow/ng-flow-standalone.js"></script>
+
+    <!--加载mainJS-->
+    <script src="resources/platform/theme/theme.js"></script>
+    <script src="resources/platform/breadcrumb/breadcrumb.js"></script>
+    <script src="resources/platform/head/head.js"></script>
+    <script src="resources/platform/menu/menu.js"></script>
+    <script src="resources/platform/dialog/dialog.js"></script>
+    <script src="resources/main/App.js"></script>
+    <script src="resources/main/http.js"></script>
+    <script src="resources/main/breadcrumb.js"></script>
+    <script src="resources/main/controllers.js"></script>
+    <script src="resources/main/directive.js"></script>
+    <script src="resources/main/pagination.js"></script>
+    <script src="resources/main/services.js"></script>
+
+    <!--加载common模块-->
+    <script src="resources/platform/common/codeService.js"></script>
+    <script src="resources/platform/common/httpInterceptor.js"></script>
+
+    <!--加载productsale模块-->
+    <script src="resources/platform/productsale/productsaleCtrl.js"></script>
+    <script src="resources/platform/productsale/productsaleService.js"></script>
+
+    <!--加载complex模块-->
+    <script src="resources/platform/complex/complexCtrl.js"></script>
+    <script src="resources/platform/complex/complexService.js"></script>
+
+    <!--加载presell模块-->
+    <script src="resources/platform/presell/presellCtrl.js"></script>
+    <script src="resources/platform/presell/presellService.js"></script>
+
+    <!-- 加载demo模块 -->
+    <script src="resources/platform/demo/demoCtrl.js"></script>
+    <script src="resources/platform/demo/demoService.js"></script>
+    
+    <!-- 加载dailymonitor模块 -->
+    <script src="resources/platform/statistics/dailyMonitorCtrl.js"></script>
+    
+    <!-- 加载echarts模块 -->
+    <script src="resources/echarts/echarts.js"></script>
+    
+    <!-- 加载home模块 -->
+    <script src="resources/platform/home/homeCtrl.js"></script>
+    <!-- 加载个人设置模块 -->
+    <script src="resources/platform/personal/personalCtrl.js"></script>
+    <script src="resources/platform/personal/personalCtrlService.js"></script>
+    
+    <!-- 加载图片管理模块 -->
+	<script src="resources/platform/productsale/productSaleImageManageCtrl.js"></script>
+    <script src="resources/platform/productsale/productSaleImageManageService.js"></script>
+    
+    <!-- 加载权限管理模块 -->
+	<script src="resources/platform/power/userManagerCtrl.js"></script>
+    <script src="resources/platform/power/userManagerService.js"></script>
+    <script src="resources/platform/power/roleManagerCtrl.js"></script>
+    <script src="resources/platform/power/roleManagerService.js"></script>
+    <script src="resources/platform/power/resourceManagerCtrl.js"></script>
+    <script src="resources/platform/power/resourceManagerService.js"></script>
+	
+	<!-- 配置echarts路径 -->
+	<script type="text/javascript">
+	    require.config({
+	        paths: {
+	            echarts: 'resources/echarts'
+	        }
+	    });
+ 	</script>
+    <!--解决页面$.browser未定义的问题-->
+    <script>
+        var matched, browser;
+        jQuery.uaMatch = function( ua ) {
+            ua = ua.toLowerCase();
+
+            var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+                    /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+                    /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+                    /(msie) ([\w.]+)/.exec( ua ) ||
+                    ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+                    [];
+            return {
+                browser: match[ 1 ] || "",
+                version: match[ 2 ] || "0"
+            };
+        };
+        matched = jQuery.uaMatch( navigator.userAgent );
+        browser = {};
+        if ( matched.browser ) {
+            browser[ matched.browser ] = true;
+            browser.version = matched.version;
+        }
+        // Chrome is Webkit, but Webkit is also Safari.
+        if ( browser.chrome ) {
+            browser.webkit = true;
+        } else if ( browser.webkit ) {
+            browser.safari = true;
+        }
+        jQuery.browser = browser;
+    </script>
+</body>
+</html>
